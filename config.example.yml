@@ -1,0 +1,60 @@
+#-------------------------------------------------+    
+# Consul Cluster
+#-------------------------------------------------+  
+Consul:
+  Datacenter: "DC-1"
+  Components:
+
+    Consul:
+      Version: 1.9.4
+      Repo: "https://releases.hashicorp.com/consul"
+
+  #-----------------------------------------------+    
+  Leader: 
+    - User: root 
+      Addr: <Your IP Address>
+      InternalAddr: <Your IP Address>
+
+#-------------------------------------------------+    
+# Nomad Cluster
+#-------------------------------------------------+    
+Nomad:
+  Datacenter: "DC-1"
+  Components:
+
+    Nomad:
+      Version: 1.1.0
+      Repo: "https://releases.hashicorp.com/nomad"
+
+    Consul:
+      Version: 1.9.4
+      Repo: "https://releases.hashicorp.com/consul"
+
+    Containernetworking:
+      Version: 0.9.0
+      Repo: "https://github.com/containernetworking/plugins/releases/download"
+
+    Weave:
+      Password: "password"
+      Version: "latest"
+      Repo: "git.io/weave"
+
+  #-----------------------------------------------+    
+  Leader: 
+    - User: root 
+      Addr: <Your IP Address>
+      InternalAddr: <Your IP Address>
+
+  Follower:
+    - User: root 
+      Addr: <Your IP Address>
+      InternalAddr: <Your IP Address>
+
+    - User: root 
+      Addr: <Your IP Address>
+      InternalAddr: <Your IP Address>
+
+    - User: root 
+      Addr: <Your IP Address>
+      InternalAddr: <Your IP Address>
+  

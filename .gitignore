@@ -1,0 +1,6 @@
+hui
+*.txt
+*.csr
+*.pem
+consul_key
+config.yml
